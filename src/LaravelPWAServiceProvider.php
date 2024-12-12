@@ -3,6 +3,8 @@
 namespace CodebarAg\LaravelPWA;
 
 use CodebarAg\LaravelPWA\Commands\LaravelPWACommand;
+use CodebarAg\LaravelPWA\Views\Components\Pwa;
+use Illuminate\Support\Facades\Blade;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -22,6 +24,7 @@ class LaravelPWAServiceProvider extends PackageServiceProvider
             ->hasMigrations(
                 'add_pwa_column_to_tenant_model_table',
             )
+            ->hasViews('pwa')
             ->hasCommand(LaravelPWACommand::class);
     }
 }

@@ -2,10 +2,7 @@
 
 namespace CodebarAg\LaravelPWA\Http\Controllers;
 
-use CodebarAg\LaravelPWA\Contracts\PWA;
-use CodebarAg\LaravelPWA\PWAManifestService;
-use Illuminate\Support\Facades\Auth;
-
+use CodebarAg\LaravelPWA\Actions\PwaManifest;
 class PwaController
 {
     /**
@@ -15,13 +12,7 @@ class PwaController
      */
     public function manifestJson()
     {
-        $tenant = $this->getTenant();
-
-        ray($tenant);
-
-        $manifest = PWAManifestService::get($tenant);
-
-        return response()->json($manifest);
+        return response()->json(PwaManifest::handle());
     }
 
     /**
@@ -32,50 +23,61 @@ class PwaController
         return view('offline');
     }
 
-    /**
-     * Retrieve the tenant instance for the authenticated user.
-     *
-     * @throws \Exception
-     */
-    protected function getTenant(): ?PWA
+
+
+    public function pwaJS()
     {
-        $tenantModel = $this->getTenantModel();
+        $content = <<<JS
+        const CACHE_NAME = 'offline-v1.1';
+        const filesToCache = [
+            '/',
+            // '/offline',
+            '/manifest.json',
+            '/build/manifest.json',
+        ];
 
-        if (! $tenantModel) {
-            return null;
+        async function preLoad() {
+            const cache = await caches.open(CACHE_NAME);
+            const response = await fetch('/build/manifest.json');
+            const json = await response.json();
+            const urlsToCache = filesToCache.concat(Object.values(json).map(item => '/build/' + item['file']));
+            await cache.addAll(urlsToCache);
         }
 
-        $tenant = Auth::user()->getPWATenant();
+        self.addEventListener('install', event => {
+            event.waitUntil(preLoad());
+        });
 
-        if (is_null($tenant)) {
-            return null;
-        }
+        self.addEventListener('activate', event => {
+            event.waitUntil(clients.claim());
+            event.waitUntil(caches.keys().then(cacheNames => {
+                return Promise.all(cacheNames.filter(cacheName => cacheName !== CACHE_NAME)
+                    .map(cacheName => caches.delete(cacheName)));
+            }));
+        });
 
-        if (! $tenant instanceof $tenantModel) {
-            throw new \Exception('User method getPWATenant must return an instance of '.$tenantModel);
-        }
+        self.addEventListener('fetch', event => {
+            if (event.request.method === "GET" && (event.request.url.startsWith('http://') || event.request.url.startsWith('https://'))) {
+                event.respondWith(fetch(event.request).then(response => {
+                    return caches.open(CACHE_NAME).then(cache => {
+                        cache.put(event.request, response.clone());
+                        return response;
+                    });
+                }).catch(() => {
+                    return caches.match(event.request)
+                        .then(response => {
+                            return response || (event.request.mode === 'navigate' ? caches.match('/offline') : undefined);
+                        });
+                }));
+            } else {
+                event.respondWith(caches.match(event.request).then(response => {
+                    return response || fetch(event.request);
+                }));
+            }
+        });
+        JS;
 
-        return $tenant;
-    }
-
-    /**
-     * Get the tenant model from configuration.
-     *
-     * @throws \Exception
-     */
-    protected function getTenantModel(): ?PWA
-    {
-        if (! Auth::check() || ! config('pwa.tenant.enabled')) {
-            return null;
-        }
-
-        $tenantClass = config('pwa.tenant.model');
-        $tenantModel = new $tenantClass;
-
-        if (! $tenantModel instanceof PWA) {
-            throw new \Exception('Tenant model must implement CodebarAg\LaravelPWA\Contracts\PWA');
-        }
-
-        return $tenantModel;
+        return response($content, 200)
+            ->header('Content-Type', 'application/javascript');
     }
 }

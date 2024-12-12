@@ -14,5 +14,13 @@ Route::as('pwa.')
                 'verified',
             ]);
 
+        Route::get('/pwa.js', [PwaController::class, 'pwaJS'])
+            ->name('pwa-js')
+            ->withoutMiddleware([
+                'auth:sanctum',
+                config('jetstream.auth_session'),
+                'verified',
+            ]);
+
         Route::get('/offline/', [PwaController::class, 'offline'])->name('offline');
     });

@@ -14,6 +14,7 @@ class PWA
     public function __construct(
         public string $name,
         public string $shortName,
+        public string $description,
 
         public string $start_url,
 
@@ -27,7 +28,7 @@ class PWA
 
         public array $icons,
 
-        public array $splash,
+        public array $screenshots,
 
         public ?array $shortcuts,
     ) {}
@@ -37,6 +38,7 @@ class PWA
         return new self(
             name: Arr::get($data, 'name', config('pwa.manifest.name')).'TENANT',
             shortName: Arr::get($data, 'short_name', config('pwa.manifest.short_name')),
+            description: Arr::get($data, 'description', config('pwa.manifest.description')),
 
             start_url: Arr::get($data, 'start_url', config('pwa.manifest.start_url')),
 
@@ -50,19 +52,19 @@ class PWA
 
             icons: Arr::get($data, 'icons', config('pwa.manifest.icons')),
 
-            splash: Arr::get($data, 'splash', config('pwa.manifest.splash')),
+            screenshots: Arr::get($data, 'screenshots', config('pwa.manifest.screenshots')),
 
             shortcuts: Arr::get($data, 'shortcuts', config('pwa.manifest.shortcuts')),
         );
     }
 
     //     Custom conversions for toArray()
-    private function convertInstances(mixed $value): mixed
-    {
-        //        if ($value instanceof SomeEnumOrClass) {
-        //            return $value->getSomeConvertsionMethod();
-        //        }
-
-        return $value;
-    }
+//    private function convertInstances(mixed $value): mixed
+//    {
+//        //        if ($value instanceof SomeEnumOrClass) {
+//        //            return $value->getSomeConvertsionMethod();
+//        //        }
+//
+//        return $value;
+//    }
 }
