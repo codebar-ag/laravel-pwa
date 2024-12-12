@@ -3,7 +3,6 @@
 namespace CodebarAg\LaravelPWA;
 
 use CodebarAg\LaravelPWA\Contracts\PWA;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
 
 class PWAManifestService
@@ -50,34 +49,34 @@ class PWAManifestService
             'version' => now()->format('YmdHis'),
         ];
 
-//        if (
-//            $pwa &&
-//            app('tenant')->getFirstMedia('icon')
-//        ) {
-//            $media = app('tenant')->getFirstMedia('icon');
-//            foreach ($media->generated_conversions as $conversion => $converted) {
-//                if ($converted) {
-//                    $basicManifest['icons'][] = [
-//                        'src' => $media->getUrl($conversion),
-//                        'type' => $media->mime_type,
-//                        'sizes' => $conversion,
-//                        'purpose' => 'any',
-//                    ];
-//                }
-//            }
-//        } else {
-//            foreach (config('pwa.manifest.icons') as $size => $file) {
-//                $fileInfo = pathinfo($file['path']);
-//                $basicManifest['icons'][] = [
-//                    'src' => $file['path'],
-//                    'type' => 'image/'.$fileInfo['extension'],
-//                    'sizes' => $size,
-//                    'purpose' => $file['purpose'],
-//                ];
-//            }
+        //        if (
+        //            $pwa &&
+        //            app('tenant')->getFirstMedia('icon')
+        //        ) {
+        //            $media = app('tenant')->getFirstMedia('icon');
+        //            foreach ($media->generated_conversions as $conversion => $converted) {
+        //                if ($converted) {
+        //                    $basicManifest['icons'][] = [
+        //                        'src' => $media->getUrl($conversion),
+        //                        'type' => $media->mime_type,
+        //                        'sizes' => $conversion,
+        //                        'purpose' => 'any',
+        //                    ];
+        //                }
+        //            }
+        //        } else {
+        //            foreach (config('pwa.manifest.icons') as $size => $file) {
+        //                $fileInfo = pathinfo($file['path']);
+        //                $basicManifest['icons'][] = [
+        //                    'src' => $file['path'],
+        //                    'type' => 'image/'.$fileInfo['extension'],
+        //                    'sizes' => $size,
+        //                    'purpose' => $file['purpose'],
+        //                ];
+        //            }
 
-            $basicManifest['icons'] = config('pwa.manifest.icons');
-//        }
+        $basicManifest['icons'] = config('pwa.manifest.icons');
+        //        }
 
         if (config('pwa.manifest.shortcuts')) {
             foreach (config('pwa.manifest.shortcuts') as $shortcut) {
