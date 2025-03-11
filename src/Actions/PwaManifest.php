@@ -4,7 +4,6 @@ namespace CodebarAg\LaravelPWA\Actions;
 
 use CodebarAg\LaravelPWA\Contracts\PWA;
 use CodebarAg\LaravelPWA\PWAManifestService;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 
 class PwaManifest

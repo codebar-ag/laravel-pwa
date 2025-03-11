@@ -3,6 +3,7 @@
 namespace CodebarAg\LaravelPWA\Http\Controllers;
 
 use CodebarAg\LaravelPWA\Actions\PwaManifest;
+
 class PwaController
 {
     /**
@@ -23,11 +24,9 @@ class PwaController
         return view('offline');
     }
 
-
-
     public function pwaJS()
     {
-        $content = <<<JS
+        $content = <<<'JS'
         const CACHE_NAME = 'offline-v1.1';
         const filesToCache = [
             '/',
