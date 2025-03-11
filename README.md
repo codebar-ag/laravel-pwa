@@ -1,4 +1,4 @@
-# This is my package laravel-pwa
+<img src="https://banners.beyondco.de/Laravel%20PWA.png?theme=light&packageManager=composer+require&packageName=codebar-ag%2Flaravel-pwa&pattern=circuitBoard&style=style_1&description=An+opinionated+way+to+implment+PWA+with+Laravel&md=1&showWatermark=0&fontSize=175px&images=document-report">
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/codebar-ag/laravel-pwa.svg?style=flat-square)](https://packagist.org/packages/codebar-ag/laravel-pwa)
 [![Total Downloads](https://img.shields.io/packagist/dt/codebar-ag/laravel-pwa.svg?style=flat-square)](https://packagist.org/packages/codebar-ag/laravel-pwa)
@@ -7,21 +7,15 @@
 [![PHPStan](https://github.com/codebar-ag/laravel-pwa/actions/workflows/phpstan.yml/badge.svg)](https://github.com/codebar-ag/laravel-pwa/actions/workflows/phpstan.yml)
 [![Dependency Review](https://github.com/codebar-ag/laravel-pwa/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/codebar-ag/laravel-pwa/actions/workflows/dependency-review.yml)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+#  What is Laravel PWA?
+
+Laravel PWA is a package for laravel that provides an easy way to integrate Progressive Web Apps into your Laravel application.
 
 ## 🛠 Requirements Table
 
 | Package |     PHP     | Laravel | 
 |:-------:|:-----------:|:-------:|
 | v12.0.0 | ^8.2 - ^8.4 |  12.x   |
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-pwa.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-pwa)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
 
 ## Installation
 
