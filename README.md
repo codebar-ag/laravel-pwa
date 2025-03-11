@@ -1,9 +1,11 @@
 # This is my package laravel-pwa
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/codebar-ag/laravel-pwa.svg?style=flat-square)](https://packagist.org/packages/codebar-ag/laravel-pwa)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/codebar-ag/laravel-pwa/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/codebar-ag/laravel-pwa/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/codebar-ag/laravel-pwa/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/codebar-ag/laravel-pwa/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/codebar-ag/laravel-pwa.svg?style=flat-square)](https://packagist.org/packages/codebar-ag/laravel-pwa)
+[![GitHub-Tests](https://github.com/codebar-ag/laravel-pwa/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/codebar-ag/laravel-pwa/actions/workflows/run-tests.yml)
+[![GitHub Code Style](https://github.com/codebar-ag/laravel-pwa/actions/workflows/fix-php-code-style-issues.yml/badge.svg?branch=main)](https://github.com/codebar-ag/laravel-pwa/actions/workflows/fix-php-code-style-issues.yml)
+[![PHPStan](https://github.com/codebar-ag/laravel-pwa/actions/workflows/phpstan.yml/badge.svg)](https://github.com/codebar-ag/laravel-pwa/actions/workflows/phpstan.yml)
+[![Dependency Review](https://github.com/codebar-ag/laravel-pwa/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/codebar-ag/laravel-pwa/actions/workflows/dependency-review.yml)
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
