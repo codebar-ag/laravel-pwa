@@ -33,7 +33,7 @@ class PwaController
             '/',
             // '/offline',
             '/manifest.json',
-            '/build/manifest.json',
+            '/build/manifest.json'
         ];
 
         async function preLoad() {
