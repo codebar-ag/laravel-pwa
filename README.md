@@ -7,6 +7,12 @@
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
+## 🛠 Requirements Table
+
+| Package |     PHP     | Laravel | 
+|:-------:|:-----------:|:-------:|
+| v12.0.0 | ^8.2 - ^8.4 |  12.x   |
+
 ## Support us
 
 [<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-pwa.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-pwa)
