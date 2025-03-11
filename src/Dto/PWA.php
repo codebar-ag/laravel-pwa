@@ -59,12 +59,12 @@ class PWA
     }
 
     //     Custom conversions for toArray()
-//    private function convertInstances(mixed $value): mixed
-//    {
-//        //        if ($value instanceof SomeEnumOrClass) {
-//        //            return $value->getSomeConvertsionMethod();
-//        //        }
-//
-//        return $value;
-//    }
+    //    private function convertInstances(mixed $value): mixed
+    //    {
+    //        //        if ($value instanceof SomeEnumOrClass) {
+    //        //            return $value->getSomeConvertsionMethod();
+    //        //        }
+    //
+    //        return $value;
+    //    }
 }

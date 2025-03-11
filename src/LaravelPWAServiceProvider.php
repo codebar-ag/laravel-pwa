@@ -3,8 +3,6 @@
 namespace CodebarAg\LaravelPWA;
 
 use CodebarAg\LaravelPWA\Commands\LaravelPWACommand;
-use CodebarAg\LaravelPWA\Views\Components\Pwa;
-use Illuminate\Support\Facades\Blade;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
