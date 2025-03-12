@@ -1,19 +1,21 @@
-# This is my package laravel-pwa
+<img src="https://banners.beyondco.de/Laravel%20PWA.png?theme=light&packageManager=composer+require&packageName=codebar-ag%2Flaravel-pwa&pattern=circuitBoard&style=style_1&description=An+opinionated+way+to+implment+PWA+with+Laravel&md=1&showWatermark=0&fontSize=175px&images=document-report">
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/codebar-ag/laravel-pwa.svg?style=flat-square)](https://packagist.org/packages/codebar-ag/laravel-pwa)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/codebar-ag/laravel-pwa/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/codebar-ag/laravel-pwa/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/codebar-ag/laravel-pwa/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/codebar-ag/laravel-pwa/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/codebar-ag/laravel-pwa.svg?style=flat-square)](https://packagist.org/packages/codebar-ag/laravel-pwa)
+[![GitHub-Tests](https://github.com/codebar-ag/laravel-pwa/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/codebar-ag/laravel-pwa/actions/workflows/run-tests.yml)
+[![GitHub Code Style](https://github.com/codebar-ag/laravel-pwa/actions/workflows/fix-php-code-style-issues.yml/badge.svg?branch=main)](https://github.com/codebar-ag/laravel-pwa/actions/workflows/fix-php-code-style-issues.yml)
+[![PHPStan](https://github.com/codebar-ag/laravel-pwa/actions/workflows/phpstan.yml/badge.svg)](https://github.com/codebar-ag/laravel-pwa/actions/workflows/phpstan.yml)
+[![Dependency Review](https://github.com/codebar-ag/laravel-pwa/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/codebar-ag/laravel-pwa/actions/workflows/dependency-review.yml)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+#  What is Laravel PWA?
 
-## Support us
+Laravel PWA is a package for laravel that provides an easy way to integrate Progressive Web Apps into your Laravel application.
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-pwa.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-pwa)
+## 🛠 Requirements Table
 
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+| Package |     PHP     | Laravel | 
+|:-------:|:-----------:|:-------:|
+| v12.0.0 | ^8.2 - ^8.4 |  12.x   |
 
 ## Installation
 

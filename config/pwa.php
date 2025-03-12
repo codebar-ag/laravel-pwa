@@ -133,15 +133,4 @@ return [
         'store' => env('CACHE_STORE', 'database'),
         'expiration' => 60,
     ],
-
-    'tenant' => [
-        'enabled' => true,
-
-        'model' => \App\Models\Team::class,
-
-        'cache' => [
-            'store' => env('CACHE_STORE', 'database'),
-            'expiration' => 60,
-        ],
-    ],
 ];
