@@ -55,3 +55,20 @@ it('falls back to the config when no pwa settings are stored', function () {
     expect($pwa)->toBeInstanceOf(PWADto::class)
         ->and($pwa->theme_color)->toBe(config('pwa.manifest.theme_color'));
 });
+
+it('keeps the tenant name unchanged across saves', function () {
+    $tenant = Tenant::create([
+        'pwa' => ['name' => 'Acme'],
+    ]);
+
+    $tenant = Tenant::findOrFail($tenant->getKey());
+    $tenant->pwa = $tenant->pwa;
+    $tenant->save();
+
+    expect(Tenant::findOrFail($tenant->getKey())->pwa->name)->toBe('Acme');
+});
+
+it('builds the dto name without any suffix', function () {
+    expect(PWADto::fromArray(['name' => 'Acme'])->name)->toBe('Acme')
+        ->and(PWADto::fromArray([])->name)->toBe('Laravel');
+});
