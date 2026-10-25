@@ -58,6 +58,12 @@ class PwaController
         self.addEventListener('fetch', event => {
             if (event.request.method === "GET" && (event.request.url.startsWith('http://') || event.request.url.startsWith('https://'))) {
                 event.respondWith(fetch(event.request).then(response => {
+                    // Only keep successful same-origin responses that may be stored.
+                    const cacheControl = response.headers.get('Cache-Control') || '';
+                    if (!response.ok || response.type !== 'basic' || /no-store/i.test(cacheControl)) {
+                        return response;
+                    }
+
                     return caches.open(CACHE_NAME).then(cache => {
                         cache.put(event.request, response.clone());
                         return response;
