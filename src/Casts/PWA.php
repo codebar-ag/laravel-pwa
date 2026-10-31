@@ -27,7 +27,7 @@ class PWA
         }
 
         return [
-            $key => $value->toArray(),
+            $key => json_encode($value->toArray()),
         ];
     }
 }

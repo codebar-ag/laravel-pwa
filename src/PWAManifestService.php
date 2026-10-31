@@ -37,7 +37,7 @@ class PWAManifestService
 
         $basicManifest = [
             'name' => $pwa?->name ?? config('pwa.manifest.name'),
-            'short_name' => $pwa?->short_name ?? config('pwa.manifest.short_name'),
+            'short_name' => $pwa?->shortName ?? config('pwa.manifest.short_name'),
             'description' => $pwa?->description ?? config('pwa.manifest.description'),
             'start_url' => $pwa?->start_url ?? asset(config('pwa.manifest.start_url')),
             'display' => $pwa?->display ?? config('pwa.manifest.display'),
@@ -45,7 +45,7 @@ class PWAManifestService
             'background_color' => $pwa?->background_color ?? config('pwa.manifest.background_color'),
             'orientation' => $pwa?->orientation ?? config('pwa.manifest.orientation'),
             'status_bar' => $pwa?->status_bar ?? config('pwa.manifest.status_bar'),
-            'screenshots' => $pwa?->splash ?? config('pwa.manifest.screenshots'),
+            'screenshots' => $pwa?->screenshots ?? config('pwa.manifest.screenshots'),
             'version' => now()->format('YmdHis'),
         ];
 

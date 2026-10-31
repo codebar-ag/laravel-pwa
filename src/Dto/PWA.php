@@ -36,7 +36,7 @@ class PWA
     public static function fromArray(array $data): self
     {
         return new self(
-            name: Arr::get($data, 'name', config('pwa.manifest.name')).'TENANT',
+            name: Arr::get($data, 'name', config('pwa.manifest.name')),
             shortName: Arr::get($data, 'short_name', config('pwa.manifest.short_name')),
             description: Arr::get($data, 'description', config('pwa.manifest.description')),
 
